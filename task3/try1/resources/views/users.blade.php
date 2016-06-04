@@ -38,6 +38,7 @@
     <body>
         <div class="container">
             <div class="content">
+                @include('common.errors')
                 <form action="{{ url('user') }}" method="POST" class="form-horizontal">
                     {{ csrf_field() }}
 
