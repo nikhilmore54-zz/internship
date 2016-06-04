@@ -17,7 +17,10 @@ use Illuminate\Http\Request;
 
 
 Route::get('/', function () {
-    return view('users');
+    $users = \App\User::orderBy('created_at', 'desc')->first();
+    return view('users', [
+        'users' =>$users
+    ]);
 });
 
 Route::post('/user', function (Request $request) {
@@ -31,4 +34,12 @@ Route::post('/user', function (Request $request) {
             ->withInput()
             ->withErrors($validator);
     }
+
+    $user = new \App\User;
+    $user->name = $request->name;
+    $user->email = $request->email;
+    $user->save();
+
+    return 'Thank you '.$request->name.' for registering with us!!';
+
 });

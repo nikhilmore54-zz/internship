@@ -39,7 +39,7 @@
         <div class="container">
             <div class="content">
                 @include('common.errors')
-                <form action="{{ url('user') }}" method="POST" class="form-horizontal">
+                <form action="{{ url('user') }}" method="POST" class="form-horizontal" accep-charset="UTF-8">
                     {{ csrf_field() }}
 
                     <!-- User Name -->
