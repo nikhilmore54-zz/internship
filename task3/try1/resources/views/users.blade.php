@@ -57,7 +57,7 @@
                     </div>
                    
                     <!-- Add Register Button -->
-                    <button type="submit">
+                    <button type="submit" name="register">
                          Register
                     </button>
                 </div>
